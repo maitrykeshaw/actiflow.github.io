@@ -1,8 +1,20 @@
+User-agent: Googlebot
+Allow: /
+User-agent: APIs-Google
+Allow: /
 User-agent: Mediapartners-Google
-Disallow: 
-
-User-agent: *
-Disallow: /search
+Allow: /
+User-agent: AdsBot-Google-Mobile
+Allow: /
+User-agent: AdsBot-Google
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+User-agent: Googlebot-Video
+Allow: /
+User-agent: Storebot-Google
 Allow: /
 
-Sitemap: https://miccywall.blogspot.com/sitemap.xml
+Sitemap: https://alpha-xtra-boost.netlify.app/sitemap.xml
