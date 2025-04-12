@@ -5145,6 +5145,25 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </script>
+  <script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+
+    // Register the Service Worker
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+            .serviceWorker
+            .register('serviceworker.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+  </script>
   <script async>
     var page_key = 'k40gvrcwhjl794rt';
     var fid = '12844844';
