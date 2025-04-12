@@ -5173,25 +5173,6 @@
     integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
     data-cf-beacon='{"rayId":"801c00365c513a99","version":"2023.8.0","b":1,"token":"405b708a9b0242e88fda34dc27903686","si":100}'
     crossorigin="anonymous"></script>
-  <script>
-    window.addEventListener('load', () => {
-      registerSW();
-    });
-
-    // Register the Service Worker
-    async function registerSW() {
-      if ('serviceWorker' in navigator) {
-        try {
-          await navigator
-            .serviceWorker
-            .register('serviceworker.js');
-        }
-        catch (e) {
-          console.log('SW registration failed');
-        }
-      }
-    }
-  </script>
 </body>
 
 </html>
