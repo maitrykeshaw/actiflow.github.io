@@ -1,18 +1,15 @@
-var staticCacheName = "pwa";
- 
-self.addEventListener("install", function (e) {
-  e.waitUntil(
-    caches.open(staticCacheName).then(function (cache) {
-      return cache.addAll(["/"]);
-    })
-  );
+self.addEventListener('install', function(event) {
+  console.log('Service Worker installing.');
+  self.skipWaiting();
 });
- 
-self.addEventListener("fetch", function (event) {
-  console.log(event.request.url);
- 
+
+self.addEventListener('activate', function(event) {
+  console.log('Service Worker activating.');
+});
+
+self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
+    caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     })
   );

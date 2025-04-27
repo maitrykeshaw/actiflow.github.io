@@ -28,9 +28,21 @@
     rel="stylesheet" type="text/css">
   <link rel="icon" type="image/png" href="hosted/images/3d/b7c41a3f334b0699d2878347d531f6/Actiflow.png">
   </link>
-  <link rel="manifest" href="manifest.json">
   <meta name="msvalidate.01" content="D706A9CDA41743E14DA57A6DCB2DDAFF" />
   <meta name="google-site-verification" content="jZ-4xgvm4jkQtqSJ2rjz3NtQHXHVf1xCU-st2WTnuJI" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00bcd4">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 </head>
 <script
   type="text/javascript">function init() { for (var t = document.getElementsByTagName("img"), e = 0; e < t.length; e++) { var i = t[e].getAttribute("data-src"); if (i) { for (var n = t[e].parentElement, a = 0; 0 == a && n;)a = n.scrollWidth, n = n.parentElement; a && 0 < i.indexOf("images.clickfunnels.com") && (i = "//get-actiflow.com/hosted/images/cdn-cgi/image/fit=scale-down,width=" + a + ",quality=75/" + i), t[e].setAttribute("src", i) } } } window.addEventListener("load", init);</script>
