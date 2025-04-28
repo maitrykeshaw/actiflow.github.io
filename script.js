@@ -1,11 +1,13 @@
 window.addEventListener('load', () => {
   const originalTitle = document.title;
   const attentionTitle = '*Come Back!';
+  
   const originalFavicon = document.querySelector("link[rel='icon']");
-  const faviconHref = originalFavicon ? originalFavicon.href : '';
-  
-  const attentionFaviconURL = 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Red_circle.svg'; // 🔴 Red dot emoji favicon
-  
+  const originalFaviconHref = originalFavicon ? originalFavicon.href : '';
+
+  // Attention favicon URL
+  const attentionFaviconHref = 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Red_circle.svg';
+
   let blinkInterval = null;
   let isBlinking = false;
   let toggleState = false;
@@ -23,27 +25,28 @@ window.addEventListener('load', () => {
       blinkInterval = setInterval(() => {
           toggleState = !toggleState;
           document.title = toggleState ? attentionTitle : originalTitle;
-          updateFavicon(toggleState ? attentionFaviconURL : faviconHref);
-      }, 500); // 500ms interval
+          swapFavicon(toggleState ? attentionFaviconHref : originalFaviconHref);
+      }, 500); // 500ms blinking
   }
 
   function stopBlinking() {
       isBlinking = false;
       clearInterval(blinkInterval);
       document.title = originalTitle;
-      updateFavicon(faviconHref);
+      swapFavicon(originalFaviconHref);
   }
 
-  function updateFavicon(url) {
-      if (!url) return;
-      let favicon = document.querySelector("link[rel='icon']");
-      if (favicon) {
-          favicon.href = url;
-      } else {
-          favicon = document.createElement('link');
-          favicon.rel = 'icon';
-          favicon.href = url;
-          document.head.appendChild(favicon);
-      }
+  function swapFavicon(iconURL) {
+      removeExistingFavicons();
+
+      const newFavicon = document.createElement('link');
+      newFavicon.rel = 'icon';
+      newFavicon.href = iconURL + '?v=' + new Date().getTime(); // Force refresh by adding timestamp
+      document.head.appendChild(newFavicon);
+  }
+
+  function removeExistingFavicons() {
+      const links = document.querySelectorAll("link[rel='icon']");
+      links.forEach(link => link.parentNode.removeChild(link));
   }
 });
