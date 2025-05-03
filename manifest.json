@@ -1,12 +1,12 @@
 {
-  "name":"PWA Tutorial",
-  "short_name":"PWA",
+  "name":"Actiflow™ (Official) | Get Today Special Discount and Free Shipping",
+  "short_name":"Actiflow™",
   "start_url":"index.html",
   "display":"standalone",
   "background_color":"#5900b3",
   "theme_color":"#FF5733",
   "scope": ".",
-  "description":"This is a PWA tutorial.",
+  "description":"Actiflow Prostate Formula is a dietary supplement designed to support prostate health.",
   "icons":[
   {
   "src":"icons/favicon-192x192.png",                     
