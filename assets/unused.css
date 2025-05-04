@@ -23,6 +23,27 @@ body {
 .innerContent {
   word-wrap: break-word;
 }
+.ea-buttonPulseGlow {
+  animation: pulseGlow 2s infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 0px 0px 2.5px 1px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.5);
+  }
+  85% {
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+  }
+}
 .ea-buttonBounce {
   animation: bounce 1.5s infinite;
   animation-timing-function: ease-in;
@@ -73,10 +94,10 @@ body {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   }
 } /*!
-   * Bootstrap v3.1.1 (http://getbootstrap.com)
-   * Copyright 2011-2014 Twitter, Inc.
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   */ /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */ /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -94,10 +115,6 @@ a:hover {
 }
 b {
   font-weight: 700;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 img {
   border: 0;
@@ -189,20 +206,15 @@ a:focus {
 img {
   vertical-align: middle;
 }
-h1,
 h2 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
-h1,
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-}
-h1 {
-  font-size: 36px;
 }
 h2 {
   font-size: 30px;
@@ -232,7 +244,6 @@ h2 {
   margin-left: -15px;
   margin-right: -15px;
 }
-.col-md-3,
 .col-md-4,
 .col-md-6,
 .col-md-8,
@@ -243,7 +254,6 @@ h2 {
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .col-md-3,
   .col-md-4,
   .col-md-6,
   .col-md-8,
@@ -261,9 +271,6 @@ h2 {
   }
   .col-md-4 {
     width: 33.33333333%;
-  }
-  .col-md-3 {
-    width: 25%;
   }
 }
 @font-face {
@@ -319,17 +326,11 @@ h2 {
 .row {
   padding: 10px;
 }
-.padding10-top {
-  padding-top: 10px;
-}
 .padding20-top {
   padding-top: 20px;
 }
 .padding40-top {
   padding-top: 40px;
-}
-.padding10-bottom {
-  padding-bottom: 10px;
 }
 .padding20-bottom {
   padding-bottom: 20px;
@@ -359,9 +360,26 @@ h2 {
 .padding10 {
   padding: 10px !important;
 }
-.cornersBottom {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.padding20 {
+  padding: 20px !important;
+}
+.cornersTop {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.block_floatnone {
+  float: none;
+}
+.block_positionnone {
+  position: auto;
+}
+.borderSolid.border1px {
+  border-width: 1px;
+  border-style: solid;
+}
+.borderSolid.border2px {
+  border-width: 2px;
+  border-style: solid;
 }
 .borderSolid.border3px {
   border-width: 3px;
@@ -376,6 +394,33 @@ h2 {
 }
 .borderLight {
   border-color: rgba(0, 0, 0, 0.7);
+}
+.borderLightTop {
+  border-top-color: rgba(0, 0, 0, 0.7);
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+.shadow20 {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.shadow30 {
+  -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+.shadow40 {
+  -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.border1px {
+  background-position-y: -1px;
+}
+.border2px {
+  background-position-y: -2px;
 }
 .border3px {
   background-position-y: -3px;
@@ -392,6 +437,11 @@ h2 {
   background-attachment: fixed !important;
   background-repeat: repeat repeat !important;
   background-position: center center;
+}
+.bgCover101 {
+  background-size: 100% 100% !important;
+  -webkit-background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
 }
 .modalBackdropWrapper {
   position: fixed;
@@ -425,7 +475,6 @@ body {
   -webkit-font-smoothing: antialiased;
   color: inherit !important;
 }
-h1,
 h2 {
   margin-top: 0px;
 }
@@ -451,26 +500,14 @@ h2 {
 .elHeadlineWrapper .elHeadline span {
   padding: 0px;
 }
+.hsSize1 {
+  font-size: 16px;
+}
 .hsSize2 {
   font-size: 24px;
 }
-.hsSize3 {
-  font-size: 32px;
-}
-.lh4 {
-  line-height: 1.3em;
-}
 .lh3 {
   line-height: normal;
-}
-.deCapitalize {
-  text-transform: capitalize;
-}
-.de1pxLetterSpacing {
-  letter-spacing: 1px;
-}
-.de2pxLetterSpacing {
-  letter-spacing: 2px;
 }
 .de-image-block img {
   max-width: 100%;
@@ -478,6 +515,12 @@ h2 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0px;
+}
+.imgRoundCorners {
+  border-radius: 5px;
+}
+.thumbnailImage {
+  border: 3px solid #fff;
 }
 .elButton {
   margin-right: auto;
@@ -520,6 +563,9 @@ h2 {
 .elButtonSize1 .elButtonSub {
   font-size: 14px;
 }
+.elButtonTxtColor2 {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
 .elButtonRounded {
   border: 1px solid rgba(0, 0, 0, 0.13);
   border-bottom: 4px solid rgba(0, 0, 0, 0.13);
@@ -542,6 +588,10 @@ h2 {
 }
 .elButtonColor1:hover {
   background-color: #0c69a8;
+}
+.elBtnVP_5 {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 .elBtnVP_10 {
   padding-top: 10px !important;
@@ -566,8 +616,15 @@ h2 {
 .elBTN_b_1 {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+.elBTN_b_1_3 {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
 .elButtonShadowN1 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.elButtonShadowN3 {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 .elButtonShadowFlatHighlight {
   -moz-box-shadow: none;
@@ -578,30 +635,11 @@ h2 {
   box-shadow: inset 0 0px 0px 0 rgba(255, 255, 255, 0.22),
     0 233px 233px 0 rgba(255, 255, 255, 0.12) inset;
 }
-.elDivider {
-  width: 100%;
-  min-height: 1px;
-  margin: 0px;
+.ssHeadlineSize2 {
+  font-size: 24px;
 }
-.elDividerInner {
-  min-height: 1px;
-}
-.elDivider:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
-.elDivider {
-  display: inline-block;
-}
-.elDivider {
-  display: block;
-}
-.elDividerStyle1 .elDividerInner {
-  border-top-width: 1px;
-  border-top-style: solid;
+.ssBodySize2 {
+  font-size: 16px;
 }
 .elInput {
   outline: none !important;
@@ -616,19 +654,22 @@ h2 {
   font-weight: 400;
   font-style: normal;
 } /*! Social Likes v3.0.4 by Artem Sapegin - http://sapegin.github.com/social-likes - Licensed MIT */ /*!
-  * Pricely v1.0
-  *
-  * Copyright 2013 - Forever, Weborithm.com
-  *
-  * Designed and built by Weborithm
-  */
+* Pricely v1.0
+*
+* Copyright 2013 - Forever, Weborithm.com
+*
+* Designed and built by Weborithm
+*/
+.faqTitle {
+  padding-bottom: 5px;
+}
+.faqTitle i {
+  margin-right: 5px;
+}
 .payselect-container:visible:last {
   border-bottom: 1px solid #e0e0e0;
 } /*! Swipebox v1.2.8 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
 @media only screen and (min-width: 771px) {
-  *[data-hide-on="mobile"] {
-    display: none !important;
-  }
   *[data-hide-on="desktop"] {
     display: block;
   }
@@ -636,9 +677,6 @@ h2 {
 @media only screen and (min-width: 0px) and (max-width: 770px) {
   *[data-hide-on="desktop"] {
     display: none !important;
-  }
-  *[data-hide-on="mobile"] {
-    display: block;
   }
   body {
     overflow-x: hidden;
@@ -706,7 +744,6 @@ h2 {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
-  .fullContainer .col-md-3,
   .fullContainer .col-md-4,
   .fullContainer .col-md-6,
   .fullContainer .col-md-8,
@@ -725,8 +762,22 @@ h2 {
   .fullContainer .col-md-4 {
     width: 33.33333333%;
   }
-  .fullContainer .col-md-3 {
-    width: 25%;
+  .midContainer .col-md-12 {
+    float: left !important;
+  }
+  .midContainer .col-md-12 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mfs_22 {
+    font-size: 22px !important;
+  }
+  .mfs_24 {
+    font-size: 24px !important;
+  }
+  .mfs_28 {
+    font-size: 28px !important;
   }
 }
 @media (max-width: 1170px) {
