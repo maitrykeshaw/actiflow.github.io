@@ -17,4 +17,7 @@ Allow: /
 User-agent: Storebot-Google
 Allow: /
 
+User-agent: *
+Allow: /
+
 Sitemap: https://buy-actiflow.vercel.app/sitemap.xml
